@@ -1,3 +1,4 @@
+import { OptionConstructor } from './base';
 export interface RegexPicker<T> {
     regex: RegExp;
     value: T;
@@ -7,8 +8,8 @@ export interface RegexPicker<T> {
  * which defaults to 'New ' + the class name. For classes that inherit
  * Ingredient it will use their name, e.g:
  */
-export declare class Ingredient {
-    private name;
+export declare class Ingredient extends OptionConstructor {
+    name: string;
     constructor(options: any);
     /** Check if a regex or list of regexes matches the name, returning
      *  either true/false or a value if the list has two items

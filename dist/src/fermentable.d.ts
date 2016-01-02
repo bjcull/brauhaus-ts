@@ -27,7 +27,7 @@ export declare class Fermentable extends Ingredient {
      */
     type(): string;
     /** When is this item added in the brewing process? Boil, steep, or mash? */
-    addition(): void;
+    addition(): string;
     /** Get the weight in pounds */
     weightLb(): number;
     /** Get the weight in pounds and ounces */

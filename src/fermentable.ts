@@ -20,10 +20,10 @@ export class Fermentable extends Ingredient {
      */
     static BOIL: RegExp = /candi|candy|dme|dry|extract|honey|lme|liquid|sugar|syrup|turbinado/i;
 
-    public weight: number = 1.0;
-    public yield: number = 75.0;
-    public color: number = 2.0;
-    public late: boolean = false;
+    public weight: number;
+    public yield: number;
+    public color: number;
+    public late: boolean;
 
     /** Convert to JSON, storing only values that cannot be easily computed */
     // toJSON() {
@@ -42,7 +42,7 @@ export class Fermentable extends Ingredient {
 
     /** When is this item added in the brewing process? Boil, steep, or mash? */
     addition() {
-        this.nameRegexPickerArray([
+        return this.nameRegexPickerArray([
             // Forced values take precedence, then search known names and
             // default to mashing
             { regex: /mash/i, value: 'mash' },

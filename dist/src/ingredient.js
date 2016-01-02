@@ -1,19 +1,29 @@
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var base_1 = require('./base');
 /**
  * Base class for new recipe ingredients. Each ingredient gets a name,
  * which defaults to 'New ' + the class name. For classes that inherit
  * Ingredient it will use their name, e.g:
  */
-var Ingredient = (function () {
+var Ingredient = (function (_super) {
+    __extends(Ingredient, _super);
     function Ingredient(options) {
         // Set default name based on the class name
-        this.name = 'New ' + options.name;
-        //super(options)
+        if (!this.name) {
+            this.name = 'New Ingredient';
+        }
+        _super.call(this, options);
     }
     /** Check if a regex or list of regexes matches the name, returning
      *  either true/false or a value if the list has two items
      */
     Ingredient.prototype.nameRegex = function (regex) {
-        return regex.exec(this.name) == null;
+        var result = regex.exec(this.name.toLowerCase());
+        return result != null;
     };
     Ingredient.prototype.nameRegexArray = function (regexArray) {
         for (var i = 0; i < regexArray.length; i++) {
@@ -38,5 +48,6 @@ var Ingredient = (function () {
         return null;
     };
     return Ingredient;
-})();
+})(base_1.OptionConstructor);
 exports.Ingredient = Ingredient;
+//# sourceMappingURL=ingredient.js.map

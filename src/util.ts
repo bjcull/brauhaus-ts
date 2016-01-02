@@ -205,7 +205,8 @@ export class Utils {
     static srmToName(srm: number): string {
         var color = Globals.COLOR_NAMES[0].name;
 
-        for (let i = 0; i < Globals.COLOR_NAMES.length; i++) {
+        for (let i = 0; i < Globals.COLOR_NAMES.length; i++) {           
+            var testcolor = Globals.COLOR_NAMES[i].color;
             if (Globals.COLOR_NAMES[i].color <= srm) {
                 color = Globals.COLOR_NAMES[i].name;
             }

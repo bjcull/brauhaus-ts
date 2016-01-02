@@ -17,10 +17,6 @@ var Fermentable = (function (_super) {
     __extends(Fermentable, _super);
     function Fermentable() {
         _super.apply(this, arguments);
-        this.weight = 1.0;
-        this.yield = 75.0;
-        this.color = 2.0;
-        this.late = false;
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     // toJSON() {
@@ -37,7 +33,7 @@ var Fermentable = (function (_super) {
     };
     /** When is this item added in the brewing process? Boil, steep, or mash? */
     Fermentable.prototype.addition = function () {
-        this.nameRegexPickerArray([
+        return this.nameRegexPickerArray([
             // Forced values take precedence, then search known names and
             // default to mashing
             { regex: /mash/i, value: 'mash' },
@@ -103,3 +99,4 @@ var Fermentable = (function (_super) {
     return Fermentable;
 })(ingredient_1.Ingredient);
 exports.Fermentable = Fermentable;
+//# sourceMappingURL=fermentable.js.map

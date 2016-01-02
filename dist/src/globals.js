@@ -39,3 +39,4 @@ var Globals = (function () {
     return Globals;
 })();
 exports.Globals = Globals;
+//# sourceMappingURL=globals.js.map

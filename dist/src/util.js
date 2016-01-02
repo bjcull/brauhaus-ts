@@ -159,6 +159,7 @@ var Utils = (function () {
     Utils.srmToName = function (srm) {
         var color = globals_1.Globals.COLOR_NAMES[0].name;
         for (var i = 0; i < globals_1.Globals.COLOR_NAMES.length; i++) {
+            var testcolor = globals_1.Globals.COLOR_NAMES[i].color;
             if (globals_1.Globals.COLOR_NAMES[i].color <= srm) {
                 color = globals_1.Globals.COLOR_NAMES[i].name;
             }
@@ -180,3 +181,4 @@ var Utils = (function () {
     return Utils;
 })();
 exports.Utils = Utils;
+//# sourceMappingURL=util.js.map

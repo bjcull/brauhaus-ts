@@ -30,6 +30,9 @@ describe('Fermentable', function () {
         it('should calculate the addition', function () {
             should(fermentable.addition().toLowerCase()).equal('boil');
         });
+        it('should calculate type of fermentable', function () {
+            should(fermentable.type().toLowerCase()).equal('extract');
+        });
     });
 });
 //# sourceMappingURL=fermentableTest.js.map

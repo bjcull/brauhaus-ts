@@ -33,7 +33,10 @@ describe('Fermentable', () => {
             should(fermentable.colorCss().toLowerCase()).equal('rgb(38, 0, 0)');
         });
         it('should calculate the addition', () => {
-            should(fermentable.addition().toLowerCase()).equal('boil');
+            should(fermentable.addition().toLowerCase()).equal('boil');            
+        });
+        it('should calculate type of fermentable', () => {
+            should(fermentable.type().toLowerCase()).equal('extract');
         });
     });
 });

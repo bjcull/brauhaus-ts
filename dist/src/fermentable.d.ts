@@ -22,6 +22,7 @@ export declare class Fermentable extends Ingredient {
     color: number;
     late: boolean;
     /** Convert to JSON, storing only values that cannot be easily computed */
+    toJSON(): string;
     /** Get the type of fermentable based on its name, either extract
      *  or grain (steeping / mashing)
      */

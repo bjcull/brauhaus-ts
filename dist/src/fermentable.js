@@ -19,9 +19,15 @@ var Fermentable = (function (_super) {
         _super.apply(this, arguments);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
-    // toJSON() {
-    //     json = {@name, @weight, @yield, @color, @late}
-    // }
+    Fermentable.prototype.toJSON = function () {
+        return JSON.stringify({
+            name: this.name,
+            weight: this.weight,
+            yield: this.yield,
+            color: this.color,
+            late: this.late
+        });
+    };
     /** Get the type of fermentable based on its name, either extract
      *  or grain (steeping / mashing)
      */

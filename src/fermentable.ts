@@ -26,9 +26,15 @@ export class Fermentable extends Ingredient {
     public late: boolean;
 
     /** Convert to JSON, storing only values that cannot be easily computed */
-    // toJSON() {
-    //     json = {@name, @weight, @yield, @color, @late}
-    // }
+     toJSON() {
+         return JSON.stringify({
+             name: this.name, 
+             weight: this.weight, 
+             yield: this.yield, 
+             color: this.color, 
+             late: this.late
+         });
+     }
 
     /** Get the type of fermentable based on its name, either extract
      *  or grain (steeping / mashing)

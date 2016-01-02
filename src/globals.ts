@@ -1,4 +1,3 @@
-module Brauhaus {
     export interface BeerColor {
         color: number,
         name: string
@@ -46,4 +45,3 @@ module Brauhaus {
             sugar: 0.88
         };
     }
-}

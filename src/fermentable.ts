@@ -1,5 +1,5 @@
 import {Ingredient} from './ingredient';
-import {Utils} from './util';
+import {Utils, IPoundsAndOunces, IRGB} from './util';
 
 /**
  * A fermentable ingredient, e.g. liquid malt extract. Each ingredient

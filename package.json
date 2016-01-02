@@ -1,6 +1,6 @@
 {
   "name": "brauhaus-ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A typescript version of the Brauhaus.js brewing library",
   "main": "dist/index.js",
   "typings": "dist/index",

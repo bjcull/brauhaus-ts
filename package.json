@@ -1,0 +1,24 @@
+{
+  "name": "brauhaus-ts",
+  "version": "0.1.0",
+  "description": "A typescript version of the Brauhaus.js brewing library",
+  "main": "dist/index.js",
+  "typings": "dist/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basarat/ts-npm-module.git"
+  },
+  "keywords": [
+    "typescript",
+    "atom"
+  ],
+  "author": "basaratali@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/basarat/ts-npm-module/issues"
+  },
+  "homepage": "https://github.com/basarat/ts-npm-module#readme"
+}

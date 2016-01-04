@@ -5,7 +5,7 @@
     
     export class Globals {
         /** Hyperbolic tangent approximation */
-        tanh(value: number) {
+        static tanh(value: number) {
             return (Math.exp(value) - Math.exp(-value)) / (Math.exp(value) + Math.exp(-value));
         }
 

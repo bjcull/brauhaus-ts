@@ -11,6 +11,7 @@ export interface RegexPicker<T> {
  * Ingredient it will use their name, e.g:
  */
 export class Ingredient extends OptionConstructor {
+    /** Name of the ingredient */
     public name: string;
 
     constructor(options) {

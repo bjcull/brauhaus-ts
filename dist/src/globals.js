@@ -2,7 +2,7 @@ var Globals = (function () {
     function Globals() {
     }
     /** Hyperbolic tangent approximation */
-    Globals.prototype.tanh = function (value) {
+    Globals.tanh = function (value) {
         return (Math.exp(value) - Math.exp(-value)) / (Math.exp(value) + Math.exp(-value));
     };
     /** Room temperature in degrees C */

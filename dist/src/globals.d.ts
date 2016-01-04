@@ -4,7 +4,7 @@ export interface BeerColor {
 }
 export declare class Globals {
     /** Hyperbolic tangent approximation */
-    tanh(value: number): number;
+    static tanh(value: number): number;
     /** Room temperature in degrees C */
     static ROOM_TEMP: number;
     /**

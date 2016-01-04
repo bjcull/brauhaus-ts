@@ -9,6 +9,7 @@ export interface RegexPicker<T> {
  * Ingredient it will use their name, e.g:
  */
 export declare class Ingredient extends OptionConstructor {
+    /** Name of the ingredient */
     name: string;
     constructor(options: any);
     /** Check if a regex or list of regexes matches the name, returning

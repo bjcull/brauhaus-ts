@@ -4,5 +4,7 @@ import {Ingredient} from './ingredient';
 import {Fermentable} from './fermentable';
 import {Spice} from './spice';
 import {Yeast} from './yeast';
+import {MashStep} from './mashStep';
+import {Mash} from './mash';
 
-export = { Globals, Utils, Ingredient, Fermentable, Spice, Yeast };
+export = { Globals, Utils, Ingredient, Fermentable, Spice, Yeast, Mash, MashStep };

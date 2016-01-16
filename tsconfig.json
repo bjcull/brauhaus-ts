@@ -10,7 +10,7 @@
     "inlineSourceMap": false,
     "inlineSources": false,
     "outDir": "./dist",
-    "declaration": true
+    "declaration": true    
   },
   "exclude": [
     "node_modules"

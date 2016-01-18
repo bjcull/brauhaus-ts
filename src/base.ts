@@ -7,7 +7,7 @@ export class OptionConstructor {
      *  is not already an instance of the object. If it is an array, then each
      *  item in the array is instantiated or copied.
      */ 
-    private _paramMap: any = {}
+    protected _paramMap: any;
 
     constructor(options: any) {
         // Convert JSON strings to objects
@@ -15,12 +15,14 @@ export class OptionConstructor {
             options = JSON.parse(options);
         }
 
+        this._paramMap = this._paramMap || {};
+        
         // Set any properties passed in
         var keys = Object.keys(this._paramMap);
         for (let property in options)
         {
             // Is this a property that requires a constructor?
-            if (property in keys)
+            if (keys.indexOf(property) != -1)            
             {
                 // Don't construct null values
                 if (options[property] == null) { continue; }
@@ -31,13 +33,14 @@ export class OptionConstructor {
                     // Set the property to a mapped array, calling the
                     // constructor method to instantiate new objects
                     // if they are not already instances
+                    this[property] = this[property] || [];
                     for (let a = 0; a < options[property].length; a++) {
                         let item = options[property][a]; 
                         if (item instanceof this._paramMap[property]) {
-                            this[property] = item;
+                            this[property].push(item);
                         }
                         else {
-                            this[property] = new this._paramMap[property](item);
+                            this[property].push(new this._paramMap[property](item));
                         }
                     }
                 }

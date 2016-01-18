@@ -15,8 +15,8 @@ var util_1 = require('./util');
  */
 var Fermentable = (function (_super) {
     __extends(Fermentable, _super);
-    function Fermentable() {
-        _super.apply(this, arguments);
+    function Fermentable(fermentable) {
+        _super.call(this, fermentable);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Fermentable.prototype.toJSON = function () {

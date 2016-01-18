@@ -9,6 +9,17 @@ var base_1 = require('./base');
  * which defaults to 'New ' + the class name. For classes that inherit
  * Ingredient it will use their name, e.g:
  */
+var IIngredient = (function () {
+    function IIngredient() {
+    }
+    return IIngredient;
+})();
+exports.IIngredient = IIngredient;
+/**
+ * Base class for new recipe ingredients. Each ingredient gets a name,
+ * which defaults to 'New ' + the class name. For classes that inherit
+ * Ingredient it will use their name, e.g:
+ */
 var Ingredient = (function (_super) {
     __extends(Ingredient, _super);
     function Ingredient(options) {

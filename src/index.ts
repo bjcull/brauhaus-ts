@@ -6,5 +6,6 @@ import {Spice} from './spice';
 import {Yeast} from './yeast';
 import {MashStep} from './mashStep';
 import {Mash} from './mash';
+import {Recipe} from './recipe';
 
-export = { Globals, Utils, Ingredient, Fermentable, Spice, Yeast, Mash, MashStep };
+export = { Globals, Utils, Ingredient, Fermentable, Spice, Yeast, Mash, MashStep, Recipe };

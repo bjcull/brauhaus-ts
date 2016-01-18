@@ -5,11 +5,11 @@ var should = require('should');
 describe('Fermentable', function () {
     var fermentable;
     before(function () {
-        var test = 1;
         fermentable = new fermentable_1.Fermentable({
             name: 'Candi Sugar, Amber',
             color: 75.0,
-            yield: 78.3
+            yield: 78.3,
+            weight: 0.25
         });
     });
     describe('#properties', function () {

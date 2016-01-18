@@ -4,7 +4,17 @@ export interface RegexPicker<T> {
     regex: RegExp,
     value: T
 }
-    
+
+/**
+ * Base class for new recipe ingredients. Each ingredient gets a name,
+ * which defaults to 'New ' + the class name. For classes that inherit
+ * Ingredient it will use their name, e.g:
+ */
+export class IIngredient {
+    /** Name of the ingredient */
+    name: string;
+}
+
 /**
  * Base class for new recipe ingredients. Each ingredient gets a name,
  * which defaults to 'New ' + the class name. For classes that inherit

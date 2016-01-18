@@ -8,11 +8,11 @@ describe('Fermentable', () => {
     var fermentable: Fermentable;
     
     before(() => {
-        var test = 1;
         fermentable = new Fermentable({
             name: 'Candi Sugar, Amber',
             color: 75.0,
-            yield: 78.3
+            yield: 78.3,
+            weight: 0.25
         });
     });
     

@@ -5,6 +5,6 @@ export declare class OptionConstructor {
      *  is not already an instance of the object. If it is an array, then each
      *  item in the array is instantiated or copied.
      */
-    private _paramMap;
+    protected _paramMap: any;
     constructor(options: any);
 }

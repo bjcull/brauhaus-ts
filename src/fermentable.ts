@@ -1,5 +1,24 @@
-import {Ingredient} from './ingredient';
+import {IIngredient, Ingredient} from './ingredient';
 import {Utils, IPoundsAndOunces, IRGB} from './util';
+
+/**
+ * A fermentable ingredient, e.g. liquid malt extract. Each ingredient
+ * has a name, weight in kilograms, yield as a percentage, color in
+ * degrees SRM, and is marked as either late or normal. Late additions
+ * affect hop utilization. Each fermentable also provides methods for
+ * getting the type, addition, color name, and gravity units per volume
+ * of liquid.
+ */
+export interface IFermentable extends IIngredient{
+    /** Weight in kilograms */
+    weight: number;
+    /** Percentage yield */
+    yield: number;
+    /** Color in °SRM */
+    color: number;
+    /** Late addition */
+    late?: boolean;
+}
 
 /**
  * A fermentable ingredient, e.g. liquid malt extract. Each ingredient
@@ -20,10 +39,18 @@ export class Fermentable extends Ingredient {
      */
     static BOIL: RegExp = /candi|candy|dme|dry|extract|honey|lme|liquid|sugar|syrup|turbinado/i;
 
+    /** Weight in kilograms */    
     public weight: number;
+    /** Percentage yield */
     public yield: number;
+    /** Color in °SRM */
     public color: number;
+    /** Late addition */
     public late: boolean;
+    
+    constructor(fermentable?: IFermentable) {
+        super(fermentable);
+    }
 
     /** Convert to JSON, storing only values that cannot be easily computed */
      toJSON() {

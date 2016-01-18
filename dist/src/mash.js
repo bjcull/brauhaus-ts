@@ -12,10 +12,11 @@ var util_1 = require('./util');
  */
 var Mash = (function (_super) {
     __extends(Mash, _super);
-    function Mash(options) {
-        _super.call(this, options);
-        // Set default mash step list to a new empty list
-        this.steps = [];
+    function Mash(mash) {
+        this._paramMap = {
+            steps: mashStep_1.MashStep
+        };
+        _super.call(this, mash);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Mash.prototype.toJSON = function () {

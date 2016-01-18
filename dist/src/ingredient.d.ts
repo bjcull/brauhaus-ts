@@ -8,6 +8,15 @@ export interface RegexPicker<T> {
  * which defaults to 'New ' + the class name. For classes that inherit
  * Ingredient it will use their name, e.g:
  */
+export declare class IIngredient {
+    /** Name of the ingredient */
+    name: string;
+}
+/**
+ * Base class for new recipe ingredients. Each ingredient gets a name,
+ * which defaults to 'New ' + the class name. For classes that inherit
+ * Ingredient it will use their name, e.g:
+ */
 export declare class Ingredient extends OptionConstructor {
     /** Name of the ingredient */
     name: string;

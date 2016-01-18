@@ -1,5 +1,17 @@
-import { Ingredient } from './ingredient';
+import { IIngredient, Ingredient } from './ingredient';
 import { IPoundsAndOunces } from './util';
+export interface ISpice extends IIngredient {
+    /** Weight in kilograms */
+    weight: number;
+    /** Alpha-acid percentage (0 - 100) */
+    aa: number;
+    /** When to use the spice (mash, boil, primary, etc) */
+    use: string;
+    /** Time in minutes to add the spice */
+    time: number;
+    /** Form, like pellet, whole, ground, crushed, etc */
+    form: string;
+}
 /**
  * A spice ingredient, e.g. cascade hops or crushed coriander. Each spice
  * has a weight in kilograms, alpha acid (aa) percentage, use (mash, boil,
@@ -19,6 +31,7 @@ export declare class Spice extends Ingredient {
     time: number;
     /** Form, like pellet, whole, ground, crushed, etc */
     form: string;
+    constructor(spice?: ISpice);
     /** Convert to JSON, storing only values that cannot be easily computed */
     toJSON(): string;
     /** True if this is an ingredient added after the boil */

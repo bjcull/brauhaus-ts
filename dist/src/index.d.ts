@@ -6,6 +6,7 @@ import { Spice } from './spice';
 import { Yeast } from './yeast';
 import { MashStep } from './mashStep';
 import { Mash } from './mash';
+import { Recipe } from './recipe';
 declare var _default: {
     Globals: typeof Globals;
     Utils: typeof Utils;
@@ -15,5 +16,6 @@ declare var _default: {
     Yeast: typeof Yeast;
     Mash: typeof Mash;
     MashStep: typeof MashStep;
+    Recipe: typeof Recipe;
 };
 export = _default;

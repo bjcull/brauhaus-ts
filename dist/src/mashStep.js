@@ -23,8 +23,8 @@ var MashStepType = exports.MashStepType;
  */
 var MashStep = (function (_super) {
     __extends(MashStep, _super);
-    function MashStep() {
-        _super.apply(this, arguments);
+    function MashStep(mashStep) {
+        _super.call(this, mashStep);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     MashStep.prototype.toJSON = function () {

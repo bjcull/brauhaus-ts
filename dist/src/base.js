@@ -1,21 +1,15 @@
 var OptionConstructor = (function () {
     function OptionConstructor(options) {
-        /** A base class which sets passed options as properties on itself. */
-        /** A mapping of parameter names to objects. When an option is encountered
-         *  with a matching param name, it is instantiated as that object if it
-         *  is not already an instance of the object. If it is an array, then each
-         *  item in the array is instantiated or copied.
-         */
-        this._paramMap = {};
         // Convert JSON strings to objects
         if (typeof (options) == 'string') {
             options = JSON.parse(options);
         }
+        this._paramMap = this._paramMap || {};
         // Set any properties passed in
         var keys = Object.keys(this._paramMap);
         for (var property in options) {
             // Is this a property that requires a constructor?
-            if (property in keys) {
+            if (keys.indexOf(property) != -1) {
                 // Don't construct null values
                 if (options[property] == null) {
                     continue;
@@ -25,13 +19,14 @@ var OptionConstructor = (function () {
                     // Set the property to a mapped array, calling the
                     // constructor method to instantiate new objects
                     // if they are not already instances
+                    this[property] = this[property] || [];
                     for (var a = 0; a < options[property].length; a++) {
                         var item = options[property][a];
                         if (item instanceof this._paramMap[property]) {
-                            this[property] = item;
+                            this[property].push(item);
                         }
                         else {
-                            this[property] = new this._paramMap[property](item);
+                            this[property].push(new this._paramMap[property](item));
                         }
                     }
                 }

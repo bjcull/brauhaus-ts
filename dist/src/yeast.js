@@ -12,8 +12,8 @@ var ingredient_1 = require('./ingredient');
  */
 var Yeast = (function (_super) {
     __extends(Yeast, _super);
-    function Yeast() {
-        _super.apply(this, arguments);
+    function Yeast(yeast) {
+        _super.call(this, yeast);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Yeast.prototype.toJSON = function () {

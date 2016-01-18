@@ -1,5 +1,5 @@
 import {OptionConstructor} from './base';
-import {MashStep} from './mashStep';
+import {IMashStep, MashStep} from './mashStep';
 import {Globals} from './globals';
 import {Utils} from './util';
 
@@ -7,12 +7,31 @@ import {Utils} from './util';
  * A mash profile, which contains information about a mash along with a list
  * of steps to be taken.
  */
+export interface IMash {
+    /** A list of steps to complete */
+    steps: IMashStep[],
+    /** The mash name / description */    
+    name?: string,
+    /** Temperature of the grain in degrees C */
+    grainTemp: number,
+    /** Temperature of the sparge water in degrees C */
+    spargeTemp: number,
+    /** Target PH of the mash */
+    ph: number,
+    /** Any notes useful for another brewer when mashing */
+    notes?: string
+}
+
+/**
+ * A mash profile, which contains information about a mash along with a list
+ * of steps to be taken.
+ */
 export class Mash extends OptionConstructor {
-    constructor(options?) { 
-        super(options)
-        
-        // Set default mash step list to a new empty list
-        this.steps = [];
+    constructor(mash?: IMash) { 
+        this._paramMap = {
+            steps: MashStep
+        };
+        super(mash);
     }
 
     /** A list of steps to complete */

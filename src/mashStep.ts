@@ -16,6 +16,31 @@ export enum MashStepType {
  * process, such as the amount of water to add, temperature to raise or lower
  * the mash to, etc.
  */
+export interface IMashStep {
+    /** Step name */
+    name?: string,
+    /** The type of mash step, defined above */
+    type: MashStepType,
+    /** 
+     * Optional ratio of liquid in liters per kg of grain to either infuse
+     * or decoct, depending on the `type` of the mash step.
+     */ 
+    waterRatio: number,
+    /** Step temperature in degrees C. */ 
+    temp: number,
+    /** Ending temperature after the step has been completed in degrees C. */
+    endTemp?: number,
+    /** Total time of this step in minutes */
+    time: number,
+    /** Time to ramp up to the step temperature in minutes */
+    rampTime?: number
+}
+
+/** 
+ * A mash step, which contains information about a specific step during the mash
+ * process, such as the amount of water to add, temperature to raise or lower
+ * the mash to, etc.
+ */
 export class MashStep extends OptionConstructor {
     /** Step name */
     public name: string;
@@ -40,6 +65,10 @@ export class MashStep extends OptionConstructor {
 
     /** Time to ramp up to the step temperature in minutes */
     public rampTime: number;
+    
+    constructor(mashStep?: IMashStep) {
+        super(mashStep);        
+    }
 
     /** Convert to JSON, storing only values that cannot be easily computed */
     toJSON() {

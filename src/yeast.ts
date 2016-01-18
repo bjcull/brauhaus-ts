@@ -1,4 +1,19 @@
-import {Ingredient} from './ingredient';
+import {IIngredient, Ingredient} from './ingredient';
+
+/**
+ * A yeast ingredient, e.g. Safbrew T-58 or Brett B. Each yeast has a
+ * type (ale, lager, other), a form (liquid, dry), and an attenuation
+ * percentage that describes the maximum attenuation under ideal
+ * conditions.
+ */
+export interface IYeast extends IIngredient {
+    /** Ale, lager, or other */
+    type: string;
+    /** Liquid or dry */
+    form: string;
+    /** Percentage of sugars the yeast can convert */
+    attenuation: number;
+}
 
 /**
  * A yeast ingredient, e.g. Safbrew T-58 or Brett B. Each yeast has a
@@ -7,10 +22,17 @@ import {Ingredient} from './ingredient';
  * conditions.
  */
 export class Yeast extends Ingredient {    
+    /** Ale, lager, or other */
     public type: string;
+    /** Liquid or dry */
     public form: string;
+    /** Percentage of sugars the yeast can convert */
     public attenuation: number;
 
+    constructor(yeast?: IYeast) {
+        super(yeast);        
+    }   
+    
     /** Convert to JSON, storing only values that cannot be easily computed */
     toJSON() {
         return JSON.stringify({

@@ -14,8 +14,8 @@ var util_1 = require('./util');
  */
 var Spice = (function (_super) {
     __extends(Spice, _super);
-    function Spice() {
-        _super.apply(this, arguments);
+    function Spice(spice) {
+        _super.call(this, spice);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Spice.prototype.toJSON = function () {

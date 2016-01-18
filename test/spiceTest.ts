@@ -8,7 +8,7 @@ describe('Spice', () => {
     var spice: Spice;
     
     before(() => {
-        spice = new Spice(<Spice>{
+        spice = new Spice({
             name: 'Galaxy',
             form: "pellet",
             time: 15,

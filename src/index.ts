@@ -4,8 +4,21 @@ import {Ingredient} from './ingredient';
 import {Fermentable} from './fermentable';
 import {Spice} from './spice';
 import {Yeast} from './yeast';
-import {MashStep} from './mashStep';
+import {MashStep, MashStepType} from './mashStep';
 import {Mash} from './mash';
 import {Recipe} from './recipe';
+import {GuidService} from './guidService';
 
-export = { Globals, Utils, Ingredient, Fermentable, Spice, Yeast, Mash, MashStep, Recipe };
+export = {
+    Globals, 
+    Utils,
+    Ingredient,
+    Fermentable,
+    Spice,
+    Yeast,
+    Mash,
+    MashStep,
+    MashStepType,
+    Recipe,
+    GuidService
+};

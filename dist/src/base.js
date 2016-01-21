@@ -1,5 +1,8 @@
+var guidService_1 = require('./guidService');
+/** A base class which sets passed options as properties on itself. */
 var OptionConstructor = (function () {
     function OptionConstructor(options) {
+        this.id = new guidService_1.GuidService().new();
         // Convert JSON strings to objects
         if (typeof (options) == 'string') {
             options = JSON.parse(options);

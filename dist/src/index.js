@@ -7,5 +7,18 @@ var yeast_1 = require('./yeast');
 var mashStep_1 = require('./mashStep');
 var mash_1 = require('./mash');
 var recipe_1 = require('./recipe');
-module.exports = { Globals: globals_1.Globals, Utils: util_1.Utils, Ingredient: ingredient_1.Ingredient, Fermentable: fermentable_1.Fermentable, Spice: spice_1.Spice, Yeast: yeast_1.Yeast, Mash: mash_1.Mash, MashStep: mashStep_1.MashStep, Recipe: recipe_1.Recipe };
+var guidService_1 = require('./guidService');
+module.exports = {
+    Globals: globals_1.Globals,
+    Utils: util_1.Utils,
+    Ingredient: ingredient_1.Ingredient,
+    Fermentable: fermentable_1.Fermentable,
+    Spice: spice_1.Spice,
+    Yeast: yeast_1.Yeast,
+    Mash: mash_1.Mash,
+    MashStep: mashStep_1.MashStep,
+    MashStepType: mashStep_1.MashStepType,
+    Recipe: recipe_1.Recipe,
+    GuidService: guidService_1.GuidService
+};
 //# sourceMappingURL=index.js.map

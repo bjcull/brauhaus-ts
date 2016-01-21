@@ -38,7 +38,7 @@ export class Fermentable extends Ingredient {
      *  This is used to create the recipe timeline.
      */
     static BOIL: RegExp = /candi|candy|dme|dry|extract|honey|lme|liquid|sugar|syrup|turbinado/i;
-
+    
     /** Weight in kilograms */    
     public weight: number;
     /** Percentage yield */

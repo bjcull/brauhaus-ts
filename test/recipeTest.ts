@@ -7,71 +7,87 @@ import {MashStep, MashStepType} from '../src/mashStep';
 import * as should from 'should';
 
 describe('Recipe', () => {
-    var fermentable = new Fermentable({
-        name: "Pale Malt",
-        color: 3,
-        yield: 75,
-        weight: 4.25
+    var fermentable: Fermentable;
+    var spice: Spice;
+    var yeast: Yeast;
+    var recipe: Recipe;
+    var mash: Mash;
+    
+    before(() => {
+        fermentable = new Fermentable({
+            name: "Pale Malt",
+            color: 3,
+            yield: 75,
+            weight: 4.25
+        });
+
+        spice = new Spice({
+            name: "Magnum",
+            aa: 10,
+            form: "pellet",
+            time: 60,
+            use: "mash",
+            weight: 0.020
+        });
+
+        yeast = new Yeast({
+            name: "US-05",
+            attenuation: 80,
+            form: "dry",
+            type: "ale"
+        });
+
+        recipe = new Recipe({
+            name: "Test Recipe",
+            description: "A Test Recipe",
+            author: "Ben Cull",
+            batchSize: 20,
+            boilSize: 24,
+            primaryTemp: 18,
+            primaryDays: 10,
+            servingSize: 0.33,
+            mashEfficiency: 75,
+            agingDays: 14
+        });
+
+        mash = new Mash({
+            name: "mash",
+            grainTemp: 24,
+            ph: 5.3,
+            spargeTemp: 78,
+            steps: [
+                new MashStep({
+                    name: "Sach Rest",
+                    temp: 66,
+                    time: 60,
+                    type: MashStepType.Infusion,
+                    waterRatio: 3
+                })
+            ]
+        });
+
+        recipe.addFermentable(fermentable);
+        recipe.addSpice(spice);
+        recipe.addYeast(yeast);
+        recipe.mash = mash;
+
+
+        recipe.calculate();
+        console.log(recipe.timeline());
     });
     
-    var spice = new Spice({
-        name: "Magnum",
-        aa: 10,
-        form: "pellet",
-        time: 60,
-        use: "mash",
-        weight: 0.020        
+    describe("#setup", () => {
+        it("Should construct a recipe", () => {
+            should(fermentable.name).equal('Pale Malt', "Should be able to set paramaters");
+        });
+    });    
+    
+    describe("#calculations", () => {
+        it("Should calculate OG", () => {
+            var approx = recipe.og.toFixed(3);
+            should(recipe.og).equal(1.0461001119418645, "Original Gravity");
+        });
     });
-    
-    var yeast = new Yeast({
-        name: "US-05",
-        attenuation: 80,
-        form: "dry",
-        type: "ale"
-    });
-    
-    var recipe = new Recipe({
-        name: "Test Recipe",
-        description: "A Test Recipe",
-        author: "Ben Cull",
-        batchSize: 20,
-        boilSize: 24,
-        primaryTemp: 18,
-        primaryDays: 10,
-        servingSize: 0.33,
-        mashEfficiency: 75,
-        agingDays: 14
-    });
-    
-    var mash = new Mash({
-        name: "mash",
-        grainTemp: 24,
-        ph: 5.3,
-        spargeTemp: 78,
-        steps: [
-            new MashStep({
-                name: "Sach Rest",
-                temp: 66,
-                time: 60,
-                type: MashStepType.Infusion,
-                waterRatio: 3
-            })
-        ]        
-    });
-    
-    recipe.addFermentable(fermentable);
-    recipe.addSpice(spice);
-    recipe.addYeast(yeast);
-    recipe.mash = mash;
-    
-    
-    recipe.calculate();    
-    console.log(recipe.timeline());
-    
-    it("Should construct a recipe", () => {
-        should(fermentable.name).equal('Pale Malt', "Should be able to set paramaters");        
-    });
-    
     // recipe.addFermentable(new Fermentable({
     //     name: 'Golden Promise',
     //     

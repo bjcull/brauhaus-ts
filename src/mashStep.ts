@@ -72,7 +72,7 @@ export class MashStep extends OptionConstructor {
 
     /** Convert to JSON, storing only values that cannot be easily computed */
     toJSON() {
-        return JSON.stringify({
+        return {
             name: this.name,
             type: this.type,
             waterRatio: this.waterRatio,
@@ -80,7 +80,7 @@ export class MashStep extends OptionConstructor {
             endTemp: this.endTemp,
             time: this.time,
             rampTime: this.rampTime
-        });
+        };
     }
 
     /** 

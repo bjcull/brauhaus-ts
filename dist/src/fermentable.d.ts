@@ -45,7 +45,13 @@ export declare class Fermentable extends Ingredient {
     late: boolean;
     constructor(fermentable?: IFermentable);
     /** Convert to JSON, storing only values that cannot be easily computed */
-    toJSON(): string;
+    toJSON(): {
+        name: string;
+        weight: number;
+        yield: number;
+        color: number;
+        late: boolean;
+    };
     /** Get the type of fermentable based on its name, either extract
      *  or grain (steeping / mashing)
      */

@@ -64,7 +64,6 @@ describe('Recipe', function () {
         recipe.addYeast(yeast);
         recipe.mash = mash;
         recipe.calculate();
-        console.log(recipe.timeline());
     });
     describe("#setup", function () {
         it("Should construct a recipe", function () {
@@ -77,9 +76,20 @@ describe('Recipe', function () {
             should(recipe.og).equal(1.0461001119418645, "Original Gravity");
         });
     });
-    // recipe.addFermentable(new Fermentable({
-    //     name: 'Golden Promise',
-    //     
-    // }));
+    describe("#serialization", function () {
+        it("Should serialize and deserialize to the same object", function () {
+            var recipeJson = recipe.toJSON();
+            var newRecipe = new recipe_1.Recipe(recipeJson);
+            should(newRecipe.fermentables.length).equal(recipe.fermentables.length);
+            should(newRecipe.spices.length).equal(recipe.spices.length);
+            should(newRecipe.yeast.length).equal(recipe.yeast.length);
+            should(newRecipe.mash.steps.length).equal(recipe.mash.steps.length);
+        });
+        it("Should serialize and deserialize with the same brew log", function () {
+            var recipeJson = recipe.toJSON();
+            var newRecipe = new recipe_1.Recipe(recipeJson);
+            should(newRecipe.timeline()).equal(recipe.timeline());
+        });
+    });
 });
 //# sourceMappingURL=recipeTest.js.map

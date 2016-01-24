@@ -54,13 +54,13 @@ export class Fermentable extends Ingredient {
 
     /** Convert to JSON, storing only values that cannot be easily computed */
      toJSON() {
-         return JSON.stringify({
+         return {
              name: this.name, 
              weight: this.weight, 
              yield: this.yield, 
              color: this.color, 
              late: this.late
-         });
+         };
      }
 
     /** Get the type of fermentable based on its name, either extract

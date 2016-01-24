@@ -20,14 +20,14 @@ var Mash = (function (_super) {
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Mash.prototype.toJSON = function () {
-        return JSON.stringify({
+        return {
             name: this.name,
             grainTemp: this.grainTemp,
             spargeTemp: this.spargeTemp,
             ph: this.ph,
             notes: this.notes,
             steps: this.steps
-        });
+        };
     };
     /** Temperature of the grain in degrees F */
     Mash.prototype.grainTempF = function () {

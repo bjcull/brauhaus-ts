@@ -33,7 +33,14 @@ export declare class Spice extends Ingredient {
     form: string;
     constructor(spice?: ISpice);
     /** Convert to JSON, storing only values that cannot be easily computed */
-    toJSON(): string;
+    toJSON(): {
+        name: string;
+        weight: number;
+        aa: number;
+        use: string;
+        time: number;
+        form: string;
+    };
     /** True if this is an ingredient added after the boil */
     dry(): boolean;
     /** Account for better utilization from pellets vs. whole */

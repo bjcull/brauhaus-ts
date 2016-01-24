@@ -28,7 +28,7 @@ var MashStep = (function (_super) {
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     MashStep.prototype.toJSON = function () {
-        return JSON.stringify({
+        return {
             name: this.name,
             type: this.type,
             waterRatio: this.waterRatio,
@@ -36,7 +36,7 @@ var MashStep = (function (_super) {
             endTemp: this.endTemp,
             time: this.time,
             rampTime: this.rampTime
-        });
+        };
     };
     /**
      * Generated description based on the type and parameters of this step

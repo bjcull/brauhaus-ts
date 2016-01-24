@@ -35,12 +35,12 @@ export class Yeast extends Ingredient {
     
     /** Convert to JSON, storing only values that cannot be easily computed */
     toJSON() {
-        return JSON.stringify({
+        return {
             name: this.name,
             type: this.type,
             form: this.form,
             attenuation: this.attenuation
-        });
+        };
     }
 
     /** Get the price for this yeast in USD */

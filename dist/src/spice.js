@@ -19,14 +19,14 @@ var Spice = (function (_super) {
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Spice.prototype.toJSON = function () {
-        return JSON.stringify({
+        return {
             name: this.name,
             weight: this.weight,
             aa: this.aa,
             use: this.use,
             time: this.time,
             form: this.form
-        });
+        };
     };
     /** True if this is an ingredient added after the boil */
     Spice.prototype.dry = function () {

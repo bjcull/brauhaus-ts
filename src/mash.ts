@@ -54,14 +54,14 @@ export class Mash extends OptionConstructor {
 
     /** Convert to JSON, storing only values that cannot be easily computed */
     toJSON() {
-        return JSON.stringify({
+        return {
             name: this.name,
             grainTemp: this.grainTemp,
             spargeTemp: this.spargeTemp,
             ph: this.ph,
             notes: this.notes,
             steps: this.steps
-        });
+        };
     }
 
     /** Temperature of the grain in degrees F */

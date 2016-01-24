@@ -54,7 +54,15 @@ export declare class MashStep extends OptionConstructor {
     rampTime: number;
     constructor(mashStep?: IMashStep);
     /** Convert to JSON, storing only values that cannot be easily computed */
-    toJSON(): string;
+    toJSON(): {
+        name: string;
+        type: MashStepType;
+        waterRatio: number;
+        temp: number;
+        endTemp: number;
+        time: number;
+        rampTime: number;
+    };
     /**
      * Generated description based on the type and parameters of this step
      * If siUnits is true, then use SI units (liters and kilograms), otherwise

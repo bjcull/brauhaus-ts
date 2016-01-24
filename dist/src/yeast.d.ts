@@ -28,7 +28,12 @@ export declare class Yeast extends Ingredient {
     attenuation: number;
     constructor(yeast?: IYeast);
     /** Convert to JSON, storing only values that cannot be easily computed */
-    toJSON(): string;
+    toJSON(): {
+        name: string;
+        type: string;
+        form: string;
+        attenuation: number;
+    };
     /** Get the price for this yeast in USD */
     price(): number;
 }

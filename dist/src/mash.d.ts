@@ -37,7 +37,14 @@ export declare class Mash extends OptionConstructor {
     /** Any notes useful for another brewer when mashing */
     notes: string;
     /** Convert to JSON, storing only values that cannot be easily computed */
-    toJSON(): string;
+    toJSON(): {
+        name: string;
+        grainTemp: number;
+        spargeTemp: number;
+        ph: number;
+        notes: string;
+        steps: MashStep[];
+    };
     /** Temperature of the grain in degrees F */
     grainTempF(): number;
     spargeTempF(): number;

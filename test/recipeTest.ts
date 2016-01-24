@@ -72,8 +72,7 @@ describe('Recipe', () => {
         recipe.mash = mash;
 
 
-        recipe.calculate();
-        console.log(recipe.timeline());
+        recipe.calculate();        
     });
     
     describe("#setup", () => {
@@ -88,8 +87,22 @@ describe('Recipe', () => {
             should(recipe.og).equal(1.0461001119418645, "Original Gravity");
         });
     });
-    // recipe.addFermentable(new Fermentable({
-    //     name: 'Golden Promise',
-    //     
-    // }));
+    
+    describe("#serialization", () => {
+        it("Should serialize and deserialize to the same object", () => {
+            var recipeJson = recipe.toJSON();
+            var newRecipe = new Recipe(recipeJson);
+            
+            should(newRecipe.fermentables.length).equal(recipe.fermentables.length);
+            should(newRecipe.spices.length).equal(recipe.spices.length);
+            should(newRecipe.yeast.length).equal(recipe.yeast.length);
+            should(newRecipe.mash.steps.length).equal(recipe.mash.steps.length);                       
+        });
+        it("Should serialize and deserialize with the same brew log", () => {
+            var recipeJson = recipe.toJSON();
+            var newRecipe = new Recipe(recipeJson);
+            
+            should(newRecipe.timeline()).equal(recipe.timeline());
+        });
+    });
 });

@@ -17,12 +17,12 @@ var Yeast = (function (_super) {
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Yeast.prototype.toJSON = function () {
-        return JSON.stringify({
+        return {
             name: this.name,
             type: this.type,
             form: this.form,
             attenuation: this.attenuation
-        });
+        };
     };
     /** Get the price for this yeast in USD */
     Yeast.prototype.price = function () {

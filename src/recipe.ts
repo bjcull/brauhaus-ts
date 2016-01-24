@@ -100,6 +100,7 @@ export class Recipe extends OptionConstructor {
      */
     toJSON() {
         return {
+            id: this.id,
             name: this.name,
             description: this.description,
             author: this.author,
@@ -191,6 +192,11 @@ export class Recipe extends OptionConstructor {
     /** Get a friendly human-readable color name */
     colorName() {
         return Utils.srmToName(this.color);
+    }
+    
+    /** Get a CSS-friendly string for this fermentable's color */
+    colorCss() {
+        return Utils.srmToCss(this.color);
     }
 
     /** Scale this recipe, keeping gravity and bitterness the same */

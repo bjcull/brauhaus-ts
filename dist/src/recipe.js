@@ -37,6 +37,7 @@ var Recipe = (function (_super) {
      */
     Recipe.prototype.toJSON = function () {
         return {
+            id: this.id,
             name: this.name,
             description: this.description,
             author: this.author,
@@ -115,6 +116,10 @@ var Recipe = (function (_super) {
     /** Get a friendly human-readable color name */
     Recipe.prototype.colorName = function () {
         return util_1.Utils.srmToName(this.color);
+    };
+    /** Get a CSS-friendly string for this fermentable's color */
+    Recipe.prototype.colorCss = function () {
+        return util_1.Utils.srmToCss(this.color);
     };
     /** Scale this recipe, keeping gravity and bitterness the same */
     Recipe.prototype.scale = function (batchSize, boilSize) {

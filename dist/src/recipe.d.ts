@@ -65,6 +65,7 @@ export declare class Recipe extends OptionConstructor {
      * gets called when using JSON.stringify(recipe).
      */
     toJSON(): {
+        id: string;
         name: string;
         description: string;
         author: string;
@@ -106,6 +107,8 @@ export declare class Recipe extends OptionConstructor {
     bottleCount(): number;
     /** Get a friendly human-readable color name */
     colorName(): string;
+    /** Get a CSS-friendly string for this fermentable's color */
+    colorCss(): string;
     /** Scale this recipe, keeping gravity and bitterness the same */
     scale(batchSize: any, boilSize: any): void;
     private isValueInArray(value, values);

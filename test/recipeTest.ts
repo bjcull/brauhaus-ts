@@ -99,10 +99,11 @@ describe('Recipe', () => {
             should(newRecipe.mash.steps.length).equal(recipe.mash.steps.length);                       
         });
         it("Should serialize and deserialize with the same brew log", () => {
-            var recipeJson = recipe.toJSON();
+            var recipeJson = JSON.stringify(recipe);
             var newRecipe = new Recipe(recipeJson);
+            newRecipe.calculate();
             
-            should(newRecipe.timeline()).equal(recipe.timeline());
+            should(newRecipe.timeline().join(';')).equal(recipe.timeline().join(';'));
         });
     });
 });

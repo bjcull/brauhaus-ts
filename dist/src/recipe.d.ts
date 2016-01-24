@@ -64,7 +64,33 @@ export declare class Recipe extends OptionConstructor {
      * easily computed via Recipe.prototype.calculate(). This method
      * gets called when using JSON.stringify(recipe).
      */
-    toJSON(): string;
+    toJSON(): {
+        name: string;
+        description: string;
+        author: string;
+        boilSize: number;
+        batchSize: number;
+        servingSize: number;
+        steepEfficiency: number;
+        steepTime: number;
+        mashEfficiency: number;
+        style: any;
+        ibuMethod: string;
+        fermentables: Fermentable[];
+        spices: Spice[];
+        yeast: Yeast[];
+        mash: Mash;
+        bottlingTemp: number;
+        bottlingPressure: number;
+        primaryDays: number;
+        primaryTemp: number;
+        secondaryDays: number;
+        secondaryTemp: number;
+        tertiaryDays: number;
+        tertiaryTemp: number;
+        agingDays: number;
+        agingTemp: number;
+    };
     /** Get the batch size in gallons */
     batchSizeGallons(): number;
     /** Get the boil size in gallons */

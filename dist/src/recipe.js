@@ -26,7 +26,8 @@ var Recipe = (function (_super) {
         this._paramMap = {
             fermentables: fermentable_1.Fermentable,
             spices: spice_1.Spice,
-            yeast: yeast_1.Yeast
+            yeast: yeast_1.Yeast,
+            mash: mash_1.Mash
         };
         _super.call(this, options);
     }
@@ -35,7 +36,7 @@ var Recipe = (function (_super) {
      * gets called when using JSON.stringify(recipe).
      */
     Recipe.prototype.toJSON = function () {
-        return JSON.stringify({
+        return {
             name: this.name,
             description: this.description,
             author: this.author,
@@ -61,7 +62,7 @@ var Recipe = (function (_super) {
             tertiaryTemp: this.tertiaryTemp,
             agingDays: this.agingDays,
             agingTemp: this.agingTemp
-        });
+        };
     };
     /** Get the batch size in gallons */
     Recipe.prototype.batchSizeGallons = function () {

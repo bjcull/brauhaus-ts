@@ -87,7 +87,8 @@ export class Recipe extends OptionConstructor {
         this._paramMap = {
             fermentables: Fermentable,
             spices: Spice,
-            yeast: Yeast
+            yeast: Yeast,
+            mash: Mash
         };
 
         super(options)
@@ -98,7 +99,7 @@ export class Recipe extends OptionConstructor {
      * gets called when using JSON.stringify(recipe).
      */
     toJSON() {
-        return JSON.stringify({
+        return {
             name: this.name,
             description: this.description,
             author: this.author,
@@ -124,7 +125,7 @@ export class Recipe extends OptionConstructor {
             tertiaryTemp: this.tertiaryTemp,
             agingDays: this.agingDays,
             agingTemp: this.agingTemp
-        });
+        };
     }
 
     /** Get the batch size in gallons */

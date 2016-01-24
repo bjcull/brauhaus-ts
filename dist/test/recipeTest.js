@@ -86,9 +86,10 @@ describe('Recipe', function () {
             should(newRecipe.mash.steps.length).equal(recipe.mash.steps.length);
         });
         it("Should serialize and deserialize with the same brew log", function () {
-            var recipeJson = recipe.toJSON();
+            var recipeJson = JSON.stringify(recipe);
             var newRecipe = new recipe_1.Recipe(recipeJson);
-            should(newRecipe.timeline()).equal(recipe.timeline());
+            newRecipe.calculate();
+            should(newRecipe.timeline().join(';')).equal(recipe.timeline().join(';'));
         });
     });
 });

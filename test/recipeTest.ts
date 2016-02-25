@@ -31,10 +31,12 @@ describe('Recipe', () => {
         });
 
         yeast = new Yeast({
-            name: "US-05",
+            name: "American Ale",
             attenuation: 80,
             form: "dry",
-            type: "ale"
+            type: "ale",
+            lab: "SafBrew",
+            code: "US-05"
         });
 
         recipe = new Recipe({

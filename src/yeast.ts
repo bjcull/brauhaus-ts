@@ -13,6 +13,10 @@ export interface IYeast extends IIngredient {
     form: string;
     /** Percentage of sugars the yeast can convert */
     attenuation: number;
+    /** The lab this yeast is from. e.g. White Labs or Wyeast */
+    lab: string;
+    /** The code of the yeast. e.g. US-05 or WY1056 */
+    code: string;
 }
 
 /**
@@ -28,6 +32,10 @@ export class Yeast extends Ingredient {
     public form: string;
     /** Percentage of sugars the yeast can convert */
     public attenuation: number;
+    /** The lab this yeast is from. e.g. White Labs or Wyeast */
+    public lab: string;
+    /** The code of the yeast. e.g. US-05 or WY1056 */
+    public code: string;
 
     constructor(yeast?: IYeast) {
         super(yeast);        
@@ -39,7 +47,9 @@ export class Yeast extends Ingredient {
             name: this.name,
             type: this.type,
             form: this.form,
-            attenuation: this.attenuation
+            attenuation: this.attenuation,
+            lab: this.lab,
+            code: this.code
         };
     }
 

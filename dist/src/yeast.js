@@ -21,7 +21,9 @@ var Yeast = (function (_super) {
             name: this.name,
             type: this.type,
             form: this.form,
-            attenuation: this.attenuation
+            attenuation: this.attenuation,
+            lab: this.lab,
+            code: this.code
         };
     };
     /** Get the price for this yeast in USD */

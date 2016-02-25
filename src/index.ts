@@ -8,6 +8,7 @@ import {MashStep, MashStepType} from './mashStep';
 import {Mash} from './mash';
 import {Recipe} from './recipe';
 import {GuidService} from './guidService';
+import {BeerXml} from './beerxml';
 
 export = {
     Globals, 
@@ -20,5 +21,6 @@ export = {
     MashStep,
     MashStepType,
     Recipe,
-    GuidService
+    GuidService,
+    BeerXml
 };

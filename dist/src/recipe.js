@@ -285,9 +285,6 @@ var Recipe = (function (_super) {
             // Add yeast info into the timeline map
             this.timelineMap.yeast.push(yeast);
         }
-        if (attenuation == 0) {
-            attenuation = 75.0;
-        }
         // Update final gravity based on original gravity and maximum
         // attenuation from yeast.
         this.fg = this.og - ((this.og - 1.0) * attenuation / 100.0);

@@ -27,10 +27,12 @@ describe('Recipe', function () {
             weight: 0.020
         });
         yeast = new yeast_1.Yeast({
-            name: "US-05",
+            name: "American Ale",
             attenuation: 80,
             form: "dry",
-            type: "ale"
+            type: "ale",
+            lab: "SafBrew",
+            code: "US-05"
         });
         recipe = new recipe_1.Recipe({
             name: "Test Recipe",

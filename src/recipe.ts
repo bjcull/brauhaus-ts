@@ -25,6 +25,8 @@ export class Recipe extends OptionConstructor {
     public steepEfficiency: number;
     public steepTime: number;
     public mashEfficiency: number;
+    /** The total time to boil the wort in minutes */
+    public boilTime: number;
 
     public style: any;
 
@@ -109,6 +111,7 @@ export class Recipe extends OptionConstructor {
             servingSize: this.servingSize,
             steepEfficiency: this.steepEfficiency,
             steepTime: this.steepTime,
+            boilTime: this.boilTime,
             mashEfficiency: this.mashEfficiency,
             style: this.style,
             ibuMethod: this.ibuMethod,
@@ -402,10 +405,6 @@ export class Recipe extends OptionConstructor {
             // Add yeast info into the timeline map
             this.timelineMap.yeast.push(yeast);
         }
-
-        if (attenuation == 0) {
-            attenuation = 75.0;
-        }    
 
         // Update final gravity based on original gravity and maximum
         // attenuation from yeast.

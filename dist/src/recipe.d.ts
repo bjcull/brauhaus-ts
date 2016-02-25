@@ -18,6 +18,8 @@ export declare class Recipe extends OptionConstructor {
     steepEfficiency: number;
     steepTime: number;
     mashEfficiency: number;
+    /** The total time to boil the wort in minutes */
+    boilTime: number;
     style: any;
     /** The IBU calculation method (tinseth or rager) */
     ibuMethod: string;
@@ -74,6 +76,7 @@ export declare class Recipe extends OptionConstructor {
         servingSize: number;
         steepEfficiency: number;
         steepTime: number;
+        boilTime: number;
         mashEfficiency: number;
         style: any;
         ibuMethod: string;

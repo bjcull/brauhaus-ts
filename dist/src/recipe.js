@@ -46,6 +46,7 @@ var Recipe = (function (_super) {
             servingSize: this.servingSize,
             steepEfficiency: this.steepEfficiency,
             steepTime: this.steepTime,
+            boilTime: this.boilTime,
             mashEfficiency: this.mashEfficiency,
             style: this.style,
             ibuMethod: this.ibuMethod,

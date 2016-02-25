@@ -8,6 +8,7 @@ var mashStep_1 = require('./mashStep');
 var mash_1 = require('./mash');
 var recipe_1 = require('./recipe');
 var guidService_1 = require('./guidService');
+var beerxml_1 = require('./beerxml');
 module.exports = {
     Globals: globals_1.Globals,
     Utils: util_1.Utils,
@@ -19,6 +20,7 @@ module.exports = {
     MashStep: mashStep_1.MashStep,
     MashStepType: mashStep_1.MashStepType,
     Recipe: recipe_1.Recipe,
-    GuidService: guidService_1.GuidService
+    GuidService: guidService_1.GuidService,
+    BeerXml: beerxml_1.BeerXml
 };
 //# sourceMappingURL=index.js.map

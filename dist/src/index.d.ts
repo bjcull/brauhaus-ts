@@ -8,6 +8,7 @@ import { MashStep, MashStepType } from './mashStep';
 import { Mash } from './mash';
 import { Recipe } from './recipe';
 import { GuidService } from './guidService';
+import { BeerXml } from './beerxml';
 declare var _default: {
     Globals: typeof Globals;
     Utils: typeof Utils;
@@ -20,5 +21,6 @@ declare var _default: {
     MashStepType: typeof MashStepType;
     Recipe: typeof Recipe;
     GuidService: typeof GuidService;
+    BeerXml: typeof BeerXml;
 };
 export = _default;

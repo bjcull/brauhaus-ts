@@ -1,3 +1,4 @@
+"use strict";
 var Globals = (function () {
     function Globals() {
     }
@@ -37,6 +38,6 @@ var Globals = (function () {
         sugar: 0.88
     };
     return Globals;
-})();
+}());
 exports.Globals = Globals;
 //# sourceMappingURL=globals.js.map

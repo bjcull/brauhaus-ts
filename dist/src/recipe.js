@@ -20,6 +20,7 @@ var util_1 = require('./util');
 var Recipe = (function (_super) {
     __extends(Recipe, _super);
     function Recipe(options) {
+        _super.call(this, options);
         this.fermentables = [];
         this.spices = [];
         this.yeast = [];
@@ -29,7 +30,6 @@ var Recipe = (function (_super) {
             yeast: yeast_1.Yeast,
             mash: mash_1.Mash
         };
-        _super.call(this, options);
     }
     /** Export a recipe to JSON, which stores all values which are not
      * easily computed via Recipe.prototype.calculate(). This method
@@ -209,7 +209,7 @@ var Recipe = (function (_super) {
                 };
                 // Do all items have a name?
                 for (var i = 0; i < ingredients.length; i++) {
-                    if (!ingredients.filter(filterFunc).length) {
+                    if (!filterFunc(ingredients[i])) {
                         grade += 0.5;
                     }
                 }
@@ -562,6 +562,6 @@ var Recipe = (function (_super) {
         return timeline;
     };
     return Recipe;
-})(base_1.OptionConstructor);
+}(base_1.OptionConstructor));
 exports.Recipe = Recipe;
 //# sourceMappingURL=recipe.js.map

@@ -1,3 +1,4 @@
+"use strict";
 var BeerXml = (function () {
     function BeerXml() {
     }
@@ -70,6 +71,6 @@ var BeerXml = (function () {
         return list;
     };
     return BeerXml;
-})();
+}());
 exports.BeerXml = BeerXml;
 //# sourceMappingURL=beerxml.js.map

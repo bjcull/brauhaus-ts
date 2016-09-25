@@ -1,3 +1,4 @@
+"use strict";
 var globals_1 = require('./globals');
 var Utils = (function () {
     function Utils() {
@@ -179,6 +180,6 @@ var Utils = (function () {
         return (kj / globals_1.Globals.BURNER_ENERGY) * 60;
     };
     return Utils;
-})();
+}());
 exports.Utils = Utils;
 //# sourceMappingURL=util.js.map

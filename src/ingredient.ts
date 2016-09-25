@@ -25,12 +25,12 @@ export class Ingredient extends OptionConstructor {
     public name: string;
 
     constructor(options) {
+        super(options);
+
         // Set default name based on the class name
         if (!this.name) {
             this.name = 'New Ingredient';
-        }    
-
-        super(options)
+        }
     }
 
     /** Check if a regex or list of regexes matches the name, returning

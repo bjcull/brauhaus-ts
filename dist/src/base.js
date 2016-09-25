@@ -1,3 +1,4 @@
+"use strict";
 var guidService_1 = require('./guidService');
 /** A base class which sets passed options as properties on itself. */
 var OptionConstructor = (function () {
@@ -49,6 +50,6 @@ var OptionConstructor = (function () {
         }
     }
     return OptionConstructor;
-})();
+}());
 exports.OptionConstructor = OptionConstructor;
 //# sourceMappingURL=base.js.map

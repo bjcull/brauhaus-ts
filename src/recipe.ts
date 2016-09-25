@@ -82,6 +82,8 @@ export class Recipe extends OptionConstructor {
     private timelineMap: ITimelineMap;
 
     constructor(options?) {
+        super(options);
+
         this.fermentables = [];
         this.spices = [];
         this.yeast = [];
@@ -92,8 +94,6 @@ export class Recipe extends OptionConstructor {
             yeast: Yeast,
             mash: Mash
         };
-
-        super(options)
     }    
 
     /** Export a recipe to JSON, which stores all values which are not
@@ -311,7 +311,7 @@ export class Recipe extends OptionConstructor {
 
                 // Do all items have a name?
                 for (let i = 0; i < ingredients.length; i++) {
-                    if (!ingredients.filter(filterFunc).length) {
+                    if (!filterFunc(ingredients[i])) {
                         grade += 0.5;
                     }
                 }    

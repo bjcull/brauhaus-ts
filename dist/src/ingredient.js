@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -13,7 +14,7 @@ var IIngredient = (function () {
     function IIngredient() {
     }
     return IIngredient;
-})();
+}());
 exports.IIngredient = IIngredient;
 /**
  * Base class for new recipe ingredients. Each ingredient gets a name,
@@ -23,11 +24,11 @@ exports.IIngredient = IIngredient;
 var Ingredient = (function (_super) {
     __extends(Ingredient, _super);
     function Ingredient(options) {
+        _super.call(this, options);
         // Set default name based on the class name
         if (!this.name) {
             this.name = 'New Ingredient';
         }
-        _super.call(this, options);
     }
     /** Check if a regex or list of regexes matches the name, returning
      *  either true/false or a value if the list has two items
@@ -59,6 +60,6 @@ var Ingredient = (function (_super) {
         return null;
     };
     return Ingredient;
-})(base_1.OptionConstructor);
+}(base_1.OptionConstructor));
 exports.Ingredient = Ingredient;
 //# sourceMappingURL=ingredient.js.map

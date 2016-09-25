@@ -1,3 +1,4 @@
+"use strict";
 var globals_1 = require('./globals');
 var util_1 = require('./util');
 var ingredient_1 = require('./ingredient');

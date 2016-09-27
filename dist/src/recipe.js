@@ -20,7 +20,7 @@ var util_1 = require('./util');
 var Recipe = (function (_super) {
     __extends(Recipe, _super);
     function Recipe(options) {
-        _super.call(this, options);
+        _super.call(this);
         this.fermentables = [];
         this.spices = [];
         this.yeast = [];
@@ -30,6 +30,7 @@ var Recipe = (function (_super) {
             yeast: yeast_1.Yeast,
             mash: mash_1.Mash
         };
+        _super.prototype.initialise.call(this, options);
     }
     /** Export a recipe to JSON, which stores all values which are not
      * easily computed via Recipe.prototype.calculate(). This method

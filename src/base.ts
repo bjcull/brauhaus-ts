@@ -12,7 +12,7 @@ export class OptionConstructor {
     /** An instance id for when passing objects isn't possible */
     public id: string;
 
-    constructor(options: any) {
+    public initialise(options: any) {
         this.id = new GuidService().new();
         
         // Convert JSON strings to objects

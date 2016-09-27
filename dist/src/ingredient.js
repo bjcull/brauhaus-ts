@@ -24,11 +24,12 @@ exports.IIngredient = IIngredient;
 var Ingredient = (function (_super) {
     __extends(Ingredient, _super);
     function Ingredient(options) {
-        _super.call(this, options);
+        _super.call(this);
         // Set default name based on the class name
         if (!this.name) {
             this.name = 'New Ingredient';
         }
+        _super.prototype.initialise.call(this, options);
     }
     /** Check if a regex or list of regexes matches the name, returning
      *  either true/false or a value if the list has two items

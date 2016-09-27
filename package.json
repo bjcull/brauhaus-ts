@@ -5,6 +5,7 @@
   "main": "dist/src/index.js",
   "typings": "dist/src/index",
   "scripts": {
+    "build": "ntsc -p .",
     "test": "mocha ./dist/test"
   },
   "repository": {

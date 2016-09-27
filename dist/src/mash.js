@@ -14,10 +14,11 @@ var util_1 = require('./util');
 var Mash = (function (_super) {
     __extends(Mash, _super);
     function Mash(mash) {
-        _super.call(this, mash);
+        _super.call(this);
         this._paramMap = {
             steps: mashStep_1.MashStep
         };
+        _super.prototype.initialise.call(this, mash);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     Mash.prototype.toJSON = function () {

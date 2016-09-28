@@ -1,5 +1,6 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/should/should.d.ts" />
+"use strict";
 var util_1 = require('../src/util');
 var should = require('should');
 describe('Utils', function () {

@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -34,6 +35,6 @@ var Yeast = (function (_super) {
         ]);
     };
     return Yeast;
-})(ingredient_1.Ingredient);
+}(ingredient_1.Ingredient));
 exports.Yeast = Yeast;
 //# sourceMappingURL=yeast.js.map

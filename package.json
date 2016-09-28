@@ -5,6 +5,7 @@
   "main": "dist/src/index.js",
   "typings": "dist/src/index",
   "scripts": {
+    "build": "ntsc -p .",
     "test": "mocha ./dist/test"
   },
   "repository": {
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/bjcull/brauhaus-ts#readme",
   "devDependencies": {
     "mocha": "^2.3.4",
+    "ntypescript": "1.201609060105.1",
     "should": "^8.0.2"
   }
 }

@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -103,6 +104,6 @@ var Fermentable = (function (_super) {
      */
     Fermentable.BOIL = /candi|candy|dme|dry|extract|honey|lme|liquid|sugar|syrup|turbinado/i;
     return Fermentable;
-})(ingredient_1.Ingredient);
+}(ingredient_1.Ingredient));
 exports.Fermentable = Fermentable;
 //# sourceMappingURL=fermentable.js.map

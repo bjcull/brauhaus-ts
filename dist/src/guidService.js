@@ -1,3 +1,4 @@
+"use strict";
 var GuidService = (function () {
     function GuidService() {
     }
@@ -14,6 +15,6 @@ var GuidService = (function () {
         });
     };
     return GuidService;
-})();
+}());
 exports.GuidService = GuidService;
 //# sourceMappingURL=guidService.js.map

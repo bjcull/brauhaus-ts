@@ -1,3 +1,4 @@
+"use strict";
 var recipe_1 = require('../src/recipe');
 var fermentable_1 = require('../src/fermentable');
 var spice_1 = require('../src/spice');

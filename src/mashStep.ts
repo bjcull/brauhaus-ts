@@ -67,7 +67,8 @@ export class MashStep extends OptionConstructor {
     public rampTime: number;
     
     constructor(mashStep?: IMashStep) {
-        super(mashStep);        
+        super();
+        super.initialise(mashStep);        
     }
 
     /** Convert to JSON, storing only values that cannot be easily computed */

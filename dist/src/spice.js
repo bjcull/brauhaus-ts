@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -67,6 +68,6 @@ var Spice = (function (_super) {
     /** Regular expressions to match for dry hopping vs. mash/boil additions */
     Spice.DRY_SPICE = /primary|secondary|dry/i;
     return Spice;
-})(ingredient_1.Ingredient);
+}(ingredient_1.Ingredient));
 exports.Spice = Spice;
 //# sourceMappingURL=spice.js.map

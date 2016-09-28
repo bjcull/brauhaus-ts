@@ -28,10 +28,13 @@ export interface IMash {
  */
 export class Mash extends OptionConstructor {
     constructor(mash?: IMash) { 
+        super();
+        
         this._paramMap = {
             steps: MashStep
         };
-        super(mash);
+
+        super.initialise(mash);
     }
 
     /** A list of steps to complete */

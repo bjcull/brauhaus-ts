@@ -1,5 +1,6 @@
 /// <reference path="../typings/mocha/mocha.d.ts" />
 /// <reference path="../typings/should/should.d.ts" />
+"use strict";
 var fermentable_1 = require('../src/fermentable');
 var should = require('should');
 describe('Fermentable', function () {

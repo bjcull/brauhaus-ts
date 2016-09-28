@@ -8,5 +8,5 @@ export declare class OptionConstructor {
     protected _paramMap: any;
     /** An instance id for when passing objects isn't possible */
     id: string;
-    constructor(options: any);
+    initialise(options: any): void;
 }

@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -24,7 +25,8 @@ var MashStepType = exports.MashStepType;
 var MashStep = (function (_super) {
     __extends(MashStep, _super);
     function MashStep(mashStep) {
-        _super.call(this, mashStep);
+        _super.call(this);
+        _super.prototype.initialise.call(this, mashStep);
     }
     /** Convert to JSON, storing only values that cannot be easily computed */
     MashStep.prototype.toJSON = function () {
@@ -100,6 +102,6 @@ var MashStep = (function (_super) {
         return util_1.Utils.cToF(this.endTemp);
     };
     return MashStep;
-})(base_1.OptionConstructor);
+}(base_1.OptionConstructor));
 exports.MashStep = MashStep;
 //# sourceMappingURL=mashStep.js.map

@@ -5,10 +5,10 @@
             "name": "Launch",
             "type": "node",
             "request": "launch",
-            "program": "dist/src/index.js",
+            "program": "${workspaceRoot}/dist/src/index.js",
             "stopOnEntry": false,
             "args": [],
-            "cwd": ".",
+            "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "runtimeArgs": [
                 "--nolazy"
@@ -16,7 +16,7 @@
             "env": {
                 "NODE_ENV": "development"
             },
-            "externalConsole": false,
+            
             "sourceMaps": false,
             "outDir": null
         },
@@ -29,19 +29,19 @@
         {
             "name": "mocha",
             "type": "node",
-            "program": "node_modules/mocha/bin/_mocha",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "stopOnEntry": false,
             "args": [
                 "--no-exit",
                 "./dist/test"
             ], //you can specify paths to specific tests here
-            "cwd": ".",
+            "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": {
                 "NODE_ENV": "testing"
             },
             "sourceMaps": true,
-            "outDir": "./dist/src"
+            "outDir": "${workspaceRoot}/dist/src"
         }
     ]
 }
